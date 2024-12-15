@@ -1,0 +1,184 @@
+1.what is named arguments? and uses of it
+#passing parameter in function with argument name
+#calling the function by passing arguments by their names
+
+def test(name,number):
+    print(f"number is {number}")
+    print(f"name is {name}")
+    print('###################')
+
+cap="virat kohli"
+score=500
+
+
+test(number=score,name=cap)
+#########################################
+2.how to make arguments optional in named arguments?
+def test(name="sachin",number=0):  #we need to write default
+    print(f"number is {number}")
+    print(f"name is {name}")
+    print('###################')
+
+cap="virat kohli"
+score=500
+
+
+test(number=score)
+test()  #take default
+##############################################
+3.how to pass dictinary{} to kwywprd arguments
+
+def test(**kwargs):
+    print(f"kwargs are {kwargs}")
+    print("###################")
+
+test(a=10,b=20,c=30)  #like thsi if give
+#if wehave take {} then how to wroite
+
+data={'a':10,'b':20,'c':30}  #for this
+test(**data)  #give ** to data
+'''
+kwargs are {'a': 10, 'b': 20, 'c': 30}
+###################
+kwargs are {'a': 10, 'b': 20, 'c': 30}
+###################
+
+'''
+####################################
+4.@property?
+#what is @property decorater?
+#used to call methods in aclass as we cal attroibutes
+#calling methods without()
+
+
+class bank:
+    def __init__(self,an,name):
+        self.an=an
+        self.name=name
+    @property
+    def get_an(self):
+        return self.an
+    def get_name(self):
+        return self.name
+    def set_name(self,new_name):
+        self.name=new_name
+b1=bank(123,"sachin")
+print(b1.get_name)
+print(b1.get_an)
+
+
+class bank:
+    def __init__(self,an,name):
+        self.__an=an
+        self.__name=name
+    #@property
+    def get_an(self):
+        return self.__an
+    @property
+    def get_name(self):
+        return self.__name
+    def set_name(self,new_name):
+        self.name=new_name
+
+b1 = bank(123, "sachin")
+print(b1.get_name)
+print(b1.get_an())
+
+print(b1._bank__an)
+4.@get_name.setter?
+#for set metthod also call like this way
+#we need to use another  @get_name.setter
+
+
+
+class bank:
+    def __init__(self,an,name):
+        self.__an=an
+        self.__name=name
+    @property
+    def get_name(self):
+        return self.__name
+    @get_name.setter
+    def set_name(self,new_name):
+        if type(new_name) == str:
+            print(f"setting name to {new_name}")
+            self.__name=new_name
+        else:
+            print(f"error,cant set {new_name}")
+b1=bank(123,"name1")
+print(b1.get_name)
+b1.set_name="name2"
+print(b1.get_name)
+
+b1.set_name=999
+######################################################
+5.magic method?
+'''
+__init__,__str__,__add__ all are magic methods which are comes automatically
+when we initialize class
+using __add__ we do logical operator'''
+operator overloading?
+
+class test:
+    def __init__(self,*args):
+        self.data=[]
+        for i in args:
+            if type(i) ==int:
+                self.data.append(i)
+    def __add__(a1, a2):
+
+        print("hi in add method")
+        print(a1.data, a2.data)
+        all_data=a1.data+a2.data
+        print("@@@@@@@@@@@@@@")
+        print(all_data)
+        print("############")
+        out=sum(all_data)
+
+        print(sum(all_data))
+        print("$$$$$$$$$$$")
+        print(out)
+        return out
+
+t1=test(10,20,30,"india",40)
+t2=test(11,2,3,4,5)
+
+out=t1 + t2
+print(out)
+
+###############################
+#if we have 3 objest
+class test:
+    def __init__(self,*args):
+        self.data=[]
+        for i in args:
+             if i not in self.data:
+                 self.data.append(i)
+    def __add__(self,obj):
+        print("in add method")
+        out=(self.data+obj.data)
+
+        out=sum(out)
+        out=test(out)
+        return out
+    def __str__(self):
+        return self.data[0]
+    def __mul__(self):
+        print("from mul")
+t1=test(1,2,3,4,"infia","uk")
+t2=test(23,4,32,"heh")
+t3=test(12,34,53)
+
+out=t1+t2+t3
+
+print(out,out.data)
+'''
+magicmethdos
+__add__  +
+__sub__  -
+__mul__  *
+__div__  /
+__mod__  %
+__gt__   >
+__ls__   <
+__eq__   =='''

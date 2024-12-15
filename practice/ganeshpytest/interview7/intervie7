@@ -1,0 +1,75 @@
+1.what is polymorphism?
+#allows the user to define methods in the child class with name the mentioned in parent class methods
+#based on object ,right method will be called
+
+class Account:
+    def __init__(self,an,name):
+        self.an=an
+        self.name=name
+        self.account_type="general"
+    def get_account_type(self):
+        return self.account_type
+
+class primeaccount:
+    def __init__(self,an,name,balance):
+        self.an=an
+        self.name=name
+        self.balance=balance
+        self.prime_account_type="prime acc"
+    def get_account_type(self):
+        return self.prime_account_type
+
+obj1=Account(123,"rakesh")
+obj2=primeaccount(122,"rajesh",200)
+out=obj2.get_account_type()
+print(out)
+
+2.function overloading,method overloading?
+'''
+where we will be able to define multiple funcions with same name
+but different typ of
+arguments or different number of arguments
+
+function or any definitions wiil over write
+python will not support function overlooading
+'''
+ def add(x,y):
+     return x+y
+ def add(x,y,z):
+     return x+y+z
+out=add(2,0)
+print(out)
+#####################################
+def add(x,y,z=0):  #making z argument as optinal
+    return x+y+z
+
+print(add(1,2))
+print(add(1,2,12))
+'''
+if we wrote the 2 funtions with same name then
+new will overwrite the old function'''
+############################################
+#overloading
+def add(x,y):
+    if type(x)==int and type(y)==int:
+         return x+y
+    if type(x)==list and type(y) == int:
+          return len(x)+len(y)
+out=add(1,2)
+
+x=[1,2,3]
+y=[4,5,6]
+out=add(x,y)
+print(out)
+
+out=add("x","y")
+print(out)
+
+3.
+
+
+
+
+
+
+

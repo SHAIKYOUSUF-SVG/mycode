@@ -1,0 +1,248 @@
+1.whats is use of  __all__?   related to modules
+
+from arith1 import *
+
+out=add(10,10)
+print(out)
+
+
+out1=sub(10,9)
+print(out1)
+
+
+print(div(10,10))
+2.how to intialize/cerate attributes with out using __init__?
+class student:
+    def get_name(self):
+        return self.name
+    def get_rno(self):
+        return self.rno
+
+
+
+
+s1=student()
+s2=student()
+
+
+s1.name="kiran"
+s1.rno=1234
+
+
+
+s2.name="ramesh"
+s2.rno=124
+print(s1.__dict__)
+3.how to make any attribute private?
+class student:
+    def __init__(self,name,rno):
+        print("init")
+        self.__name=name
+        self.__rno=rno
+    def get_name(self):
+        return self.__name
+
+s1=student("rakesh",1234)
+4. how to call orivate attributes out side the class?
+class student:
+    def __init__(self,name,rno):
+        print("init")
+        self.__name=name
+        self.__rno=rno
+    def get_name(self):
+        return self.__name
+
+s1=student("rakesh",1234)
+
+#print(s1.__name)
+
+print(s1._student__name)
+5.protected attributes?
+class student:
+    def __init__(self,name,rno):
+        print("init")
+        self._name=name
+        self._rno=rno
+    def get_name(self):
+        return self._name
+class marks(student):
+    #private attributes cant be access from outside the defined class
+    def get_rno(self):
+        return self._rno
+
+
+s1=student("rakesh",1234)
+m1=marks("suresh",123)
+print(m1.get_rno())
+
+
+
+
+
+
+
+print("ouside",m1._rno)
+6.what are private methods?
+class bank:
+    def __init__(self,an,name):
+        self.__an=an
+        self.__name=name
+    def __get_an(self):
+        return self.__an
+
+b1=bank(123456,"ramesh")
+#print(b1.__get_an())  with this we cant get result
+print(b1._bank__get_an())
+
+7.inheritance?
+
+class bank:
+    def __init__(self,an,name):
+        self.an=an
+        self.name=name
+    def get_name(self):
+        print("from bank")
+        return self.name
+    def get_an(self):
+        print("from bank")
+        return self.an
+
+class savingsbank(bank):
+    def get_an(self):
+        print("from savings bank")
+        super().get_an()  #super() used to set search order
+        return self.an
+
+s1=savingsbank(123,"kiran")
+print(s1.get_an())
+print(s1.get_name())
+
+8.what is multi inheritance?
+'''
+accessing properties of 2 parnet class froma child class'''
+class bank:
+    def __init__(self,an,name):
+        self.an=an
+        self.name=name
+    def get_name(self):
+        print("from bank")
+        return self.name
+    def get_an(self):
+        print("from bank")
+        return self.an
+class creaditcard:
+    def get_credit_limt(self):
+        return 50000
+    def get_an(self):
+        print("fron creditcard")
+        return self.an
+
+class savingsbank(bank,creaditcard):
+    def get_an(self):
+        print("from savings bank")
+        super().get_an()  #super() used to set search order
+        return self.an
+
+s1=savingsbank(123,"kiran")
+print(s1.get_an())
+print(s1.get_name())
+
+what is multi level inheritance?
+class bank:
+     def __init__(self,an,name,balance):
+         self.an=an
+         self.name=name
+         slef.balance=balance
+     def get_name(self):
+         return self.name
+class basicbank(bank):
+     def print_balance(self):
+          print("balance is",self.balance)
+     def withdraw(self,amt):
+          if amt >10000:
+              print("max withdraw 1000")
+              return
+          self.balance=self.balance-amt
+class bussinessbank(basicbank):
+     def withdraw(self,amt):
+          if amt >100000:
+              print("max withdraw 10000")
+              return
+          self.balance=self.balance-amt
+b1=bussinessbank(123,"rajesh",900)
+b1.withdrwa(100)
+print(b1.print_balance())
+print(b1.get_name())
+#######################################
+hirarchial inheritance:
+same parent accessed by  multiple child class
+
+
+
+
+
+
+daimond method?
+class A:
+    def test(self):
+        print("A")
+class B(A):
+    def test(self):
+        print("B")
+class C(A):
+    def test(self):
+        print("C")
+class D(B,C):
+    def test(self):
+        print("D")
+
+d1=D()
+d1.test()
+
+what is mro?
+#MRO-method resolution order
+#base/top class for any for any class in p[ython is -object class
+#in which order the programe is going to serach
+
+
+
+class A:
+    def test(self):
+        print("A")
+class B(A):
+    def test(self):
+        print("B")
+class C(A):
+    def test(self):
+        print("C")
+class D(B,C):
+    def test(self):
+        print("D")
+
+d1=D()
+#d1.test()
+print(D.mro())
+
+
+what is super?
+#super():is a function to call methods from parent class(parent cls will be serah in mro order)
+#mro order: d then b then c then a
+
+
+class A:
+    def test(self):
+        print("A")
+class B(A):
+    def test(self):
+        print("B")
+class C(A):
+    def test(self):
+        print("C")
+class D(B,C):
+    def test(self):
+        super().test()  #
+        print("D")
+
+d1=D()
+d1.test()
+
