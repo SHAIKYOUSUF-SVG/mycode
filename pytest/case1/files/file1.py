@@ -1,3 +1,4 @@
+import pytest
 import sys
 sys.path.insert(0,"C:\\python\\pycharm\\pytest\\case1\\codes")
 from arith1 import *
