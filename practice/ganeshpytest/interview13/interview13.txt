@@ -1,0 +1,78 @@
+pep8 guidelines
+python enhancement proposal
+this will give us few guidlines on how to write the code in specific format
+
+*dont wirte functionname in upeercase
+*if object is standerd/fixed then we have to assaign with capital name
+*when we creating a package dont give in filename "_" but we use _ for
+module filenames and module name in small letters
+*dont use x,y,z as object names
+*always write module names according to function code [like what we are doing]
+*while writting multiple classes always gives 2lines space for deviding
+ex:
+class new_list:
+    pass
+
+
+class new_dict:
+    pass
+
+
+class squares:
+    pass
+
+*b/w every method use 1line space
+*indentation use 4 spaces
+*no.of charecters in a line should be 76
+def function(arg_one, arg_two, arg_three, arg_four)
+def function(arg_one, arg_two,
+             arg_three, arg_four)
+from mypkg import example1, exampl2, exmaple3
+
+from mypkg import example1, \
+exampl2, exmaple3'
+
+total=(first_variable
+       + second_variable
+       - third_variable)
+
+#give \ if same line code extend to another line
+
+*in python3 we cant use mix spaces and tab
+*it will show indentation error
+*in python2 we can have mix of spaces and tabs,programe will excute
+#in python2 how to check if we have mix of spaces and tabs
+#python -t file1.py  #-t will give warning if we wrote mix of tabs and spaces
+#python -tt file.py gives error if we wrote in mix of tabs and spaces
+*comment should be 72 chars
+*dont use comment in shortcut
+* in a function if you want to comment even that is a line use ''' '''
+*it will actlike docstring
+*linter-used to enalis the code
+
+q:what are linters?
+use to analysis the code
+pycodestyle and black
+black filename.py  it will auto recorrect that file
+q:how to run /convert code of python2 to python3
+first we need to check
+where python
+and go to tool
+inside tool go to scripts  there 2to3.py file will there
+copy that file path
+paste that path in cmd and -w filename.py
+it will convert python2 code to python3
+syntax:
+C:\Users\91998\AppData\Local\Programs\Python\Python311\Tools\scripts\2to3.py -w py2to3.py
+
+
+q:pyupgarde?
+to convert python older code to newer python format
+pip install pyupgrade
+it will little impoment of syntax overwrite
+rewrite the code
+
+
+#explain about hackewrrank
+
+

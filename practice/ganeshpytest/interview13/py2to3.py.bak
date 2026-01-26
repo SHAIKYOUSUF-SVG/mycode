@@ -1,0 +1,4 @@
+print "hi "
+
+
+out=raw_input()

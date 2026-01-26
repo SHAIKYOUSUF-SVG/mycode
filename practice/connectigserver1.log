@@ -1,0 +1,6 @@
+INFO:root:about connecting to srevr
+INFO:paramiko.transport:Connected (version 2.0, client OpenSSH_8.9p1)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:severe is connect
+INFO:paramiko.transport:Connected (version 2.0, client OpenSSH_8.9p1)
+INFO:paramiko.transport:Authentication (password) successful!

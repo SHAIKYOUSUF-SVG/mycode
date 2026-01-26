@@ -1,0 +1,66 @@
+oops is nothing but binding the data and functions as a single unit so that no function
+or code can can be access the code
+
+
+conceopts:
+class
+attributes
+encapsulation
+polymorphism
+inheritance
+data abstraction/data hiding
+
+
+class:class is local entity thst has some specific attributes and methods
+
+attribute:
+attributes are the variables that belong to a class or object
+attributes can functions taht defined inside  class level or object level
+class attributes can access thorugh out the clas
+attributes are used to store the data
+types of qattoibutes:public,private,protected
+public can access form outside the class also
+privated attibutes can access only with in class we cant access outside
+protected: can access out side  hte class and f=in drived class also
+
+methods:
+functions that are definied inside a class
+functions are written to access or update the attibutes
+
+object:
+instance of class and object has state and behaviour tied with it
+
+__init__:[constructor/initializer]
+__init__ uis used inside class to f=define attirbutes here  weuse a default jey word self
+self is not fixed word based on pep8 guif=de lines we wrote that wprd
+we we create object to a class construicter will get automatically initailized
+
+Encspsulation:
+encapsulation means making attribute private and atomaccess attributes we wrote methods
+here we just h=show code functionality
+
+polymorphism:
+means accessing methods based in objects
+define method with same names in parent and child class based on object
+output will come
+
+inheritance:
+single inheritance:
+accessing properties of parent class from a simgle child class
+
+
+multiple inheritance:
+a single class inherited  by multiple patent class
+or
+when i single class be derived more than oe parent class
+
+
+multilevel inheritance:
+deriving a child class from another class which is derived from another class
+
+hirarchial inherutance:
+more than one clss was inherited from one parent class
+
+
+hybrid inheritance:
+inheritance cosisting of multiple types of inheritance is called hybrid inheritance

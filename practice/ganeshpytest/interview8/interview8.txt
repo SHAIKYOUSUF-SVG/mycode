@@ -1,0 +1,73 @@
+1.hyrarchial inheritance?
+
+#hybrid inheritance:
+
+class bank:
+    def __init__(self,an,name,balance):
+        self.an=an
+        self.name=name
+        self.balance=balance
+    def get_balance(self):
+        return self.balance
+    def set_balance(self,amt):
+        self.balance=amt
+
+class savingsbank(bank):
+    def withdraw (self,amt):
+        if amt >10000:
+            print("##min 10000 only##")
+            return
+        self.balance=self.balance-amt
+class businessbank(bank):
+    def withdraw(self,amt):
+        if amt >100000:
+            print("##min 100000 onoly##")
+            return
+        self.balance=self.balance-amt
+class creditcardbank(savingsbank):
+    def pay_bill(self):
+        self.balance=self.balance-1000
+        print("payment successfull")
+
+b1=businessbank(123,"rakesh",800900)
+out=b1.get_balance()
+print(businessbank.mro())
+print(out)
+
+b1.withdraw(100)
+print(b1.__dict__)
+b1.withdraw(90000)
+print(b1.get_balance())
+
+print(creditcardbank.mro())
+
+c1=creditcardbank(122,"rajesh",80000)
+c1.withdraw(12000)
+print(c1.get_balance())
+#######################################
+2.how to call allclass attribites?
+#how to get  all class attributes?
+#how to get all object attributes?
+#object.__dict__
+
+class school:
+    school_name="sdm"
+    school_type="private"
+    school_principal="ajay"
+    def __init__(self,an,name):
+        self.aan=an
+        self.name=name
+#print(vars(school))###########
+out=[i for i in vars(school).items() if (not i[0].startswith("__") and not i[0].endswith("__"))]
+print(out)
+############################################
+3.what is the top/base class for every class in python?
+#every class in pythin is inherited from object class
+#top level class
+class bank:
+    def __init__(self,an):
+        self.an=an
+
+b1=bank(123)
+print(bank.mro())
+#[<class '__main__.bank'>, <class 'object'>]

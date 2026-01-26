@@ -1,0 +1,27 @@
+object method
+1.here first argument received will be obj
+2.by default every method is object method
+3.use object method,to handle object attributes
+4.calling object method using class
+  ex;print(bank.get_an(b1))
+5.object methods are bound methods
+
+
+
+class method:
+1.here first argument received will be class
+2.for need write @classmethod [decorator] for class method
+3.use class method,to handle class attributes
+4.calling class method using class
+    ex:print(bank.get_an())
+5.class methods are unbound methods
+
+
+
+static method:
+1.no arguments will be given to method
+2.@staticmethod will be written fir static method
+3.use it to handle independent code
+4.calling static method using class
+   print(bank.add(10,20))
+5.static methods are unbound method

@@ -1,0 +1,35 @@
+whta is monkeypatching?
+#what is monkey patching and use of it?
+'''
+monkey patching what is :when there is error in module and we cant change
+that error which is in another file and operating that from another folder
+what we can do" we can copy that code to present running file and change
+or reset the code how we want"
+and write like this
+modul1.add=add
+'''
+import modul1
+def add (x,y):
+    return ("add is", x+y)
+modul1.add=add
+
+out1=modul1.add(100,10)
+print(out1)
+
+out=modul1.sub(1,2)
+print(out)
+##################################
+how to reload a module
+how to load a module wuth out .py extention
+how to load a module from different path,and permananent seach path
+reference copy,deep copy,shallow copy
+pass by value,pass by reference
+how to copy folder and delete which is no empty
+how to deleay the function
+'''
+import time
+print("a")
+
+time.sleep(4)  # sleep will take in sec
+#after print a wait for 4 sec and then print b
+print("b")'''

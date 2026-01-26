@@ -1,0 +1,4 @@
+#extrach from a file and write in another file
+#extarct email,date,ipaddress
+
+

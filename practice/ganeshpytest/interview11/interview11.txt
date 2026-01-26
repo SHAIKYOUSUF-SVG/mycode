@@ -1,0 +1,4 @@
+#files revision
+extraction of data write to another file
+Q:count no.of lines?
+

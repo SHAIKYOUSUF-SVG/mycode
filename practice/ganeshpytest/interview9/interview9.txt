@@ -1,0 +1,107 @@
+what is module?
+collection of codes
+eaxh modules hav own code
+we can define anynobject inside a module
+modules
+     arith1.py
+         add
+         sub
+     arith2.py
+         mult
+         div
+     dict1.py
+         func1
+         func2
+     dict2.py
+         func1
+         func2
+
+what is package?
+is a way of organizing collection if modules from a folder
+with package we can load multiple modules
+import packagename
+package
+     arith
+        arith1.py
+        arith2.py
+     dict
+        dict1.py
+        dict2.py
+
+
+diffrent way to import module?
+from module import *
+out=add()
+import module
+module.add()
+q:difference b/w from keyworf and import module?
+if there are 2 modules with same name
+if we use import module then
+ex:import arith
+   import arith1
+ then we can call/use 2 modules
+ when we use from keyword
+ex:from arith import *
+   from arith2 import *
+then same name module will call from latest one
+it better to use "import module" if we have same name modules
+
+
+q:steps to create package?
+module file1.py
+module file2.py
+__init__.py file
+in this weneed import all modules
+used for recognising package
+which gets called automatically
+import utils
+utils.add()
+
+
+q:how to install packages?
+pip isntall packages names
+q:how to ujunilstall package
+pip uninstall package name
+
+Q:what is library?
+in interview10.txt`
+q:how to list modules:
+pip list
+
+q:what is virtual environment?
+venve used to install and sttore modules
+venv acts liks apps
+we can create no.of apps\
+python -m venv app1
+python -m venv app2  app1 and app2 will be shown where we can want we run cmd
+from that path
+if we wants to use then we need to active
+to activate:
+app1\scripts\activate
+app2\scripts\activate
+it hsows like after activate   in cmd
+how to use venv:
+(app1) D:\python
+(app2) C:\path
+
+
+
+inside this wwe can install madules
+pip install paramiko install and storae app1 or app2what we select
+pip list what we download inside a app1 or app2 will show
+
+
+to decativate: app1|app2\scripts\deactivate.bat
+it will comes D:\python  now we in original python
+
+
+how to list requirmentslist?
+pip freeze > anymane.txt   app1|app2 requirmets
+what ever requrments for aoo1|app2 it will list inside anymane.txt
+
+with that file coustemer install all requirments with that filename
+python -m venv app1 -to activare
+pip install -r anyname.txt
+
+
+
